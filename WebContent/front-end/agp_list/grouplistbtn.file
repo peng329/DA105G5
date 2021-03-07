@@ -1,0 +1,65 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<div class="col-lg-2 column">
+				<div class="row clearfix butrow">
+					<div class="col-md-12 column ">
+						<button type="button" class="btn btn-outline-info btn-block" style="height:50px;" onclick="window.location.href = '<%=request.getContextPath()%>/front-end/act_list/listAllAct_List1.jsp';" >揪團區</button>
+					</div>
+				</div>
+				<div class="row clearfix butrow">
+					<div class="col-md-12 column">
+						<button type="button" class="btn btn-outline-info btn-block" style="height:50px;" onclick="window.location.href = '<%=request.getContextPath()%>/front-end/act_list/addAct_List.jsp';">開團去</button>
+					</div>
+				</div>
+				<div class="row clearfix butrow">
+					<div class="col-md-12 column">
+					<form name="" action="<%= request.getContextPath() %>/front-end/act_list/act_list.do" method="POST">
+					<input type="hidden" name="action" value="Group_management">
+					<input type="submit" class="btn btn-outline-info btn-block" style="height:50px;" value="開團管理">
+					</form>
+					</div>
+				</div>
+				<div class="row clearfix butrow">
+					<div class="col-md-12 column">
+					<form name="" action="<%= request.getContextPath() %>/front-end/act_list/act_list.do" method="POST">
+					<input type="hidden" name="action" value="Group_management2">
+					<input type="submit" class="btn btn-outline-info btn-block" style="height:50px;" value="歷史開團">
+					</form>
+					</div>
+				</div>
+				<div class="row clearfix butrow">
+					<div class="col-md-12 column ">
+					<form name="" action="<%= request.getContextPath() %>/front-end/agp_list/agp_list.do" method="POST">
+					<input type="hidden" name="action" value="Join_management2">
+					<input type="submit" class="btn btn-outline-info btn-block" style="height:50px;" value="團員審核">
+					</form>
+					</div>
+				</div>
+				<div class="row clearfix butrow">
+					<div class="col-md-12 column ">
+					<form name="" action="<%= request.getContextPath() %>/front-end/agp_list/agp_list.do" method="POST">
+					<input type="hidden" name="action" value="Join_management">
+					<input type="submit" class="btn btn-outline-info btn-block" style="height:50px;" value="參團中">
+					</form>
+					</div>
+				</div>
+				<div class="row clearfix butrow">
+					<div class="col-md-12 column ">
+					<form name="" action="<%= request.getContextPath() %>/front-end/agp_list/agp_list.do" method="POST">
+					<input type="hidden" name="action" value="Join_management1">
+					<input type="submit" class="btn btn-outline-info btn-block" style="height:50px;" value="歷史參團">
+					</form>
+					</div>
+				</div>
+				<div class="row clearfix butrow">
+					<div class="col-md-12 column ">
+						<button type="button" class="btn btn-outline-info btn-block" style="height:50px;" onclick="window.location.href = '<%=request.getContextPath()%>/front-end/gp_ept/listAllGp_Ept.jsp';">團租管理</button>
+					</div>
+				</div>
+				<div class="row clearfix butrow">
+					<div class="col-md-12 column ">
+						<button type="button" class="btn btn-outline-info btn-block" style="height:50px;" onclick="window.location.href = '<%=request.getContextPath()%>/front-end/gp_ept/listAllGp_Ept1.jsp';">歷史團租</button>
+					</div>
+				</div>
+				
+				
+			</div>

@@ -1,0 +1,38 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<head>
+<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/front-end/memCenter/css/memcenter.css">
+
+<script src="<%=request.getContextPath()%>/kit.fontawesome.com/e218ab780d.js"></script> 	
+</head>
+
+<body bgcolor='white'>
+
+
+<div class="card">
+                            <div class="profile-card">
+                                <div class="profile-header">
+                                    <div class="cover-image" align="center">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcx3E6C52MS919j89aAZft9KWBl_ytuQDlUQYtnZJcNoLoQwMy&s" class="img img-fluid">
+                                    </div>
+                                    <div class="user-image">
+                                        <img src="<%=request.getContextPath()%>/DBGifReader2?mem_no=${memVO.mem_no}" class="img ">
+                                    </div>
+                                </div>
+                                <div class="profile-content">
+                                    <div class="profile-name">${memVO.mem_name}</div>
+                                    <div class="profile-designation"></div>
+                                    <ul class="profile-info-list text-center">
+                                        <a href="<%=request.getContextPath()%>/front-end/memCenter/memCenter.jsp" class="profile-info-list-item"><i class="far fa-address-book"></i>我的資料</a>
+                                        <a href="<%=request.getContextPath()%>/front-end/memCenter/mem_myOrder.jsp" class="profile-info-list-item"><i class="fa fa-shopping-cart"></i>我的訂單</a>
+                                        <a href="" class="profile-info-list-item"><i class="far fa-file-alt"></i>我的文章</a>
+                                        <a href="<%=request.getContextPath()%>/front-end/friend/friend.do?action=getAllMemFriend_Display&mem_no=<%=memVO.getMem_no() %>" class="profile-info-list-item"><i class="fas fa-user-friends"></i>我的好友</a>
+                                        <a href="<%=request.getContextPath()%>/front-end/mdst_record/mdst_record.do?action=getAllMemMdst_record_Display&mem_no=${memVO.mem_no}" class="profile-info-list-item"><i class="far fa-thumbs-up"></i></i>我的追蹤</a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+

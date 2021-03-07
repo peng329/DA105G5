@@ -1,0 +1,89 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<style type="text/css">
+  	.navbar{
+	background:
+		url("images/background.png")
+		no-repeat center center;
+		background-size:cover;		
+}
+
+  	.side-bar-logo{
+	background:
+		url("images/sidebar_21.png")
+		no-repeat center center ;
+		background-size:cover;
+		opacity: .7;		
+}
+
+
+ nav{ 
+ 	opacity: .8;
+ } 
+</style>
+	  	<nav class="navbar navbar-expand-lg navbar-light  position-fixed w-100" style="background-color: #e3f2fd;">
+		  <a class="navbar-brand" href="#"></a>
+		  <div id="open-menu" class="menu-bar">
+		  	<div class="bars"></div>		
+		  </div>
+		  <h3>後台管理</h3>
+		    <ul class="navbar-nav ml-auto">
+		      <li class="nav-item dropdown ets-right-0">
+		      <a href="#" id="navbarDropdownMenuLink-55" role="button" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+		      <span class="navdropdown-title"><div class="user-avatar-wrapper img-circle">
+		      <span class=" lazy-load-image-background blur lazy-load-image-loaded" style="background-image:;background-size:;color:transparent;display:inline-block">
+		      <img src="<%=request.getContextPath()%>/front-end/LogoOut.jpg" class="img-fluid rounded-circle border user-profile">
+		      </span></div>${sessionWmVO.wm_name}</span></a>
+		       
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		          <a class="dropdown-item" href="<%=request.getContextPath()%>/back-end/webmaster/webmaster.do?action=getOne_For_Display&wm_no=<%=sessionWmVO.getWm_no()%>">個人資料</a>
+		          <div class="dropdown-divider"></div>
+		          <a class="dropdown-item" href="<%=request.getContextPath()%>/back-end/webmaster/webmaster.do?action=adminLogout">登出</a>
+		        </div>
+		      </li>
+		    </ul>
+		</nav>
+ 
+
+	  	<div class="side-bar">
+	  		<div class="side-bar-links">
+	  			<div class="side-bar-logo text-center py-3">
+	  				<img src="<%=request.getContextPath()%>/front-end/Logo.png" class="img-fluid  bg-secoundry mb-3">			
+	  				<h5>${sessionWmVO.wm_name}</h5>
+	  			</div>
+	  			
+	  			<ul class="navbar-nav">
+	  			<c:if test='<%=fc_noList.contains("F01")%>'>
+	  				<li class="nav-item">
+	  					<a href="<%=request.getContextPath()%>/back-end/webmaster/AllWebmaster.jsp" class="nav-links d-block"><i class="fa fa-users-cog pr-2"></i>  員工管理</a>
+	  				</li>
+	  			</c:if>
+	  			<c:if test='<%=fc_noList.contains("F01")%>'>
+	  				<li class="nav-item">
+	  					<a href="<%=request.getContextPath()%>/back-end/webmaster/addWebmaster.jsp" class="nav-links d-block"><i class="fa fa-user-plus pr-2"></i>  新增員工</a>
+	  				</li>
+	  			</c:if>
+	  			<c:if test='<%=fc_noList.contains("F02")%>'>
+	  				<li class="nav-item">
+	  					<a href="<%=request.getContextPath()%>/back-end/webmaster/adminMem.jsp" class="nav-links d-block"><i class="fa fa-users pr-2"></i>  會員管理</a>
+	  				</li>
+	  			</c:if>
+	  			<c:if test='<%=fc_noList.contains("F03")%>'>
+	  				<li class="nav-item">
+	  					<a href="#" class="nav-links d-block"><i class="fa fa-map-marked-alt pr-2"></i>  潛店管理</a>
+	  				</li>
+	  			</c:if>
+	  			<c:if test='<%=fc_noList.contains("F04")%>'>
+	  				<li class="nav-item">
+	  					<a href="#" class="nav-links d-block"><i class="fa fa-map-marker-alt pr-3"></i>    潛點管理</a>
+	  				</li>
+	  			</c:if>
+	  			<c:if test='<%=fc_noList.contains("F05")%>'>
+	  				<li class="nav-item">
+	  					<a href="<%=request.getContextPath()%>/back-end/mra_record/AllMra_record.jsp" class="nav-links d-block"><i class="fa fa-flag pr-2"></i>  檢舉文章</a>
+	  				</li>
+	  			</c:if>
+	
+	  			</ul>
+	  		
+	  		</div>
+	  	</div>

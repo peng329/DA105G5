@@ -1,0 +1,39 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<table class="table table-sm table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>檢舉編號</th>
+            <th>潛店編號</th>
+            <th>檢舉原因</th>
+            <th>審核狀態</th>
+
+            
+        </tr>
+    </thead>
+    <tbody id="myTable">
+        <c:forEach var="mrds_recordVO" items="${list}">
+            <c:if test='${!(mrds_recordVO.rep_state eq "待審核")}'>
+                <tr>
+ 		<tr>
+			<td>${mrds_recordVO.mrds_no}</td>
+			<td>${mrds_recordVO.ds_no}</td>
+			<td>${mrds_recordVO.rep_content}</td>
+			<td>${mrds_recordVO.rep_state}</td>
+
+			
+			
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- !! -->
+                </tr>
+            </c:if>
+        </c:forEach>
+    </tbody>
+</table>
+
+            
+
+

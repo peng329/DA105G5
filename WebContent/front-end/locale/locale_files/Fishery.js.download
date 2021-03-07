@@ -1,0 +1,37 @@
+//Fishery
+var NSea_ID="";
+$(document).ready(function(){	//初始化數據
+	NSea_ID=$("#"+TYPE+"_ID option:selected").val();
+	GetMOD(VER,NSea_ID,TYPE);
+
+	//Issued & Valid
+	if(VER=="C"){
+		$(".datetime:eq(0)").html("發布時間 : "+NSea.Issued);
+		$(".datetime:eq(1)").html("有效時間 : "+NSea.Valid);
+	}else{
+		$(".datetime:eq(0)").html("Issued : "+NSea.Issued);
+		$(".datetime:eq(1)").html("Valid : "+NSea.Valid);
+	}
+	
+});
+
+$("#"+TYPE+"_ID").change(function(){
+	NSea_ID=$("#"+TYPE+"_ID option:selected").val();
+	GetMOD(VER,NSea_ID,TYPE);
+});
+
+//MOD HTML
+function GetMOD(VER,TID,f_TYPE) {
+	var MOD_DIR="/V8/"+VER+"/M/Fishery/"+f_TYPE+"_MOD/";
+	var MOD_FILE=TID+"_"+f_TYPE+"_"+VER+".html?";
+	$.get(MOD_DIR+MOD_FILE, '', function(data) {
+		$("#accordion").html(data);
+		console.log( 'Get '+MOD_DIR+MOD_FILE+' Success' );
+	}).fail(function(){
+		console.log( 'Get '+MOD_DIR+MOD_FILE+' Failed!' );
+	});
+	
+	jQuery.ajaxSetup({
+		async: true
+	});
+}

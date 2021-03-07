@@ -1,0 +1,23 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<table class="table table-sm table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+        <tr>
+            <th>帳號</th>
+            <th>暱稱</th>
+            <th>審核狀態</th>
+        </tr>
+        </tr>
+    </thead>
+    <tbody id="myTable">
+        <c:forEach var="friendVO" items="${unFriendlist}">
+           <c:if test='${friendVO.fri_state eq "不通過"}'>
+            <tr>
+                <td>${memSvc.getOneMem(friendVO.mem_no_a).mem_id}</td>
+                <td>${memSvc.getOneMem(friendVO.mem_no_a).mem_name}</td>
+                <td>${friendVO.fri_state}</td>
+            </tr>
+           </c:if>
+        </c:forEach>
+    </tbody>
+</table>

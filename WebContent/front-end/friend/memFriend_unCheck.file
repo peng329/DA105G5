@@ -1,0 +1,43 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<table class="table table-sm table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+        <tr>
+            <th>帳號</th>
+            <th>暱稱</th>
+            <th>審核狀態</th>
+            <th>加好友</th>
+            <th>拒絕</th>
+        </tr>
+        </tr>
+    </thead>
+    <tbody id="myTable">
+        <c:forEach var="friendVO" items="${unFriendlist}">
+           <c:if test='${friendVO.fri_state eq "待審核"}'>
+            <tr>
+                <td>${memSvc.getOneMem(friendVO.mem_no_a).mem_id}</td>
+                <td>${memSvc.getOneMem(friendVO.mem_no_a).mem_name}</td>
+                <td>${friendVO.fri_state}</td>
+            
+       <FORM METHOD="post"  ACTION="<%=request.getContextPath()%>/front-end/friend/friend.do">
+       	<td><button type="submit" class="btn top_add_fav" name="action" value="update">
+			<i class="fa fa-plus" style="font-size: 28px; color: blue;"></i>
+			</button></td>		
+       		<input type="hidden" class="mem_no" name="mem_no" value="<%=mem_no%>">
+           <input type="hidden" class="mem_no_a" name="mem_no_a" value="${friendVO.mem_no_a}">
+           <input type="hidden" class="mem_no_b" name="mem_no_b" value="${friendVO.mem_no_b}">
+           <input type="hidden" class="fri_state" name="fri_state" value="通過">  
+       </FORM>
+       <FORM METHOD="post"  ACTION="<%=request.getContextPath()%>/front-end/friend/friend.do">
+       <td><button type="submit" class="btn top_add_fav" name="action" value="update">
+			<i class="fa fa-remove" style="font-size: 28px; color: blue;"></i>
+			</button></td>
+			<input type="hidden" class="mem_no" name="mem_no" value="<%=mem_no%>">
+           <input type="hidden" class="mem_no_a" name="mem_no_a" value="${friendVO.mem_no_a}">
+           <input type="hidden" class="mem_no_b" name="mem_no_b" value="${friendVO.mem_no_b}">
+           <input type="hidden" class="fri_state" name="fri_state" value="不通過">
+       </tr>
+           </c:if>
+        </c:forEach>
+    </tbody>
+</table>

@@ -1,0 +1,43 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+
+<table class="table table-sm table-striped table-hover">
+<thead class="thead-dark">
+	<tr>
+		<th>訂單編號</th>
+		<th>潛店編號</th>
+		<th>總件數</th>
+		<th>總價格</th>
+		<th>訂單狀態</th>
+		<th>租賃開始日</th>
+		<th>租賃結束日</th>
+		<th>訂單備註</th>
+	</tr>
+    </thead>
+    <tbody id="myTable">	
+	<c:forEach var="rorderVO" items="${rorderList}" >
+		
+		<tr>
+			<td>${rorderVO.ro_no}</td>
+			<td>${rorderVO.ds_no}</td>
+			<td>${rorderVO.tepc}</td>
+			<td>${rorderVO.tpriz}</td>
+			<td>	
+				<FORM action="<%=request.getContextPath()%>/front-end/creditcard/credit_card.jsp" method="post">
+				<c:if test="${rorderVO.op_state.equals('未付款')}">
+					<input type="hidden" name="ro_no" value="${rorderVO.ro_no}">
+					<input type="submit" value="未付款">
+				</c:if>	
+				</FORM>
+				<c:if test="${rorderVO.op_state.equals('已付款')}">
+					${rorderVO.op_state}	
+				</c:if>	
+			</td>		
+			<td>${rorderVO.rs_date}</td>
+			<td>${rorderVO.rd_date}</td>
+			<td>${rorderVO.o_note}</td>
+		</tr>
+		</tbody>
+	</c:forEach>
+</table>
+

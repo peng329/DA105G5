@@ -1,0 +1,69 @@
+$(".weather_data .icon_zone").hover(function(){
+  var name = $(this).attr('name');
+  $("#theme-1 svg #" + name + " ").toggleClass("active");
+  $("#theme-2 svg #" + name + " ").toggleClass("active");
+  $("#theme-7 svg #" + name + " ").toggleClass("active");
+});
+/*
+// 2018/08/16 Move to Tribes-Map.js function updateWeather() tail.
+$(".weather_data .tribes").hover(function(){
+  var name = $(this).attr('name');
+  $("#theme-1 svg #" + name + " ").toggleClass("active");
+  $(this).toggleClass('is_active');
+  $('.weather_data > span.is_active').not(this).removeClass('is_active');
+});
+*/
+/*
+// 2018/08/21 Move to Hakka-Map.js function updateWeather() tail.
+$(".weather_data .hakka").hover(function(){
+  var name = $(this).attr('name');
+  $("#theme-7 svg #" + name + " ").toggleClass("active");
+  $(this).toggleClass('cbutton--click');
+  $('.weather_data > span.cbutton--click').not(this).removeClass('cbutton--click');
+});
+*/
+$(".sea-surface a").hover(function(){
+  var name = $(this).attr('name');
+  $("#theme-3 svg #" + name + " ").toggleClass("active");
+});
+$(".UVI-station > span").hover(function(){
+  var name = $(this).attr('itemprop');
+  $("#theme-1 svg #" + name + " ").toggleClass("active");
+  $(this).toggleClass('is_active');
+  $('.UVI-station > span.is_active').not(this).removeClass('is_active');
+});
+$(".blueroute > li").hover(function(){
+  $(this).toggleClass('is_show');
+  $('.blueroute > li.is_show').not(this).removeClass('is_show');
+});
+
+//無障礙
+$(".blueroute > li > a").on('focus',function(){
+  var $p = $(this).parent('li');
+  $p.addClass('is_show');
+  $('.blueroute > li.is_show').not($p).removeClass('is_show');
+}).on('focusout', function(){
+  $(this).parent('li').removeClass('is_show');
+});
+
+//因為 ol > li > a 是後來加上的, 若寫 $('.blueroute > li > ol > li > a').focus() 會沒反應.
+$('.blueroute').on('focus', 'li > ol > li > a', function(){
+  var $p = $(this).parent('li').parent('ol').parent('li');
+  $p.addClass('is_show');
+  $('.blueroute > li.is_show').not($p).removeClass('is_show');
+}).on('focusout', 'li > ol > li > a', function(){
+  $(this).parent('li').parent('ol').parent('li').removeClass('is_show');
+});
+
+$(".ocean-face > li").hover(function(){
+  var name = $(this).attr('itemprop');
+  $("#theme-5 svg #" + name + " ").toggleClass("active");
+});
+$(".tab-forecast-map .tab-content ol li a").hover(function(){
+  var name = $(this).attr('name');
+  $("#theme-1 svg #" + name + " ").toggleClass("active");
+});
+$(".tab-forecast-map .tab-content ol li a").hover(function(){
+  var name = $(this).attr('name');
+  $("#theme-2 svg #" + name + " ").toggleClass("active");
+});

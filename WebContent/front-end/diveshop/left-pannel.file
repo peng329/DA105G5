@@ -1,0 +1,24 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+						<a type="button" class=" btn btn-outline-info btn-lg" 
+							href="<%=request.getContextPath()%>/diveshop/diveshop.do?action=getOne_For_Display&ds_no=${diveshopVO.ds_no}">潛店介紹</a> 
+						
+						<FORM METHOD="post" ACTION="<%=request.getContextPath()%>/front-end/equip/listAllDSEquipByDs_no.jsp?ds_no=${diveshopVO.ds_no}" >
+      					<input type="hidden" id="ds_name" name="ds_name" value="${diveshopVO.ds_name}">
+      					<input type="hidden" id="ds_no" name="ds_no" value="${diveshopVO.ds_no}">
+      					<button type="submit" class=" btn btn-outline-info btn-lg">裝備租賃</button>
+      					</FORM>
+						
+						
+						<FORM METHOD="post" ACTION="<%=request.getContextPath()%>/lesson/lesson.do" >
+						<input type="hidden" id="ds_name" name="ds_name" value="${diveshopVO.ds_name}">
+						<input type="hidden" id="ds_no" name="ds_no" value="${diveshopVO.ds_no}">
+						<input type="hidden"  name="requestURL"      value="<%=request.getServletPath()%>">
+						<input type="hidden"  name="action" value="findByDsname">
+						<button type="submit" id="findByDsname"
+								class=" btn btn-outline-info btn-lg">課程介紹</button>
+						</FORM>
+						
+						<p>Address:${diveshopVO.address}</p>
+						<p>Mail:${diveshopVO.dsmail}</p>
+						<p>Tel:${diveshopVO.tel}</p>

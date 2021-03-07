@@ -1,0 +1,38 @@
+var Info_Fishery={  
+  "Info_NSea":[
+    {"ID":"NSea01","Name":{"C":"彭佳嶼基隆海面","E":"Pengjiayu-Keelung inshore"}},
+    {"ID":"NSea02","Name":{"C":"釣魚台海面","E":"Diaoyutai"}},
+    {"ID":"NSea03","Name":{"C":"新竹鹿港沿海","E":"Hsinchu-Lukang inshore"}},
+    {"ID":"NSea04","Name":{"C":"鹿港東石沿海","E":"Lukang-Dongshi inshore"}},
+    {"ID":"NSea05","Name":{"C":"東石安平沿海","E":"Dongshi-Anping inshore"}},
+    {"ID":"NSea06","Name":{"C":"安平高雄沿海","E":"Anping-Kaohsiung inshore"}},
+    {"ID":"NSea07","Name":{"C":"高雄枋寮沿海","E":"Kaohsiung-Fangliao inshore"}},
+    {"ID":"NSea08","Name":{"C":"枋寮恆春沿海","E":"Fangliao-Hengchun inshore"}},
+    {"ID":"NSea09","Name":{"C":"鵝鑾鼻沿海","E":"Eluanbi inshore"}},
+    {"ID":"NSea10","Name":{"C":"成功臺東沿海","E":"Chenggong-Taitung inshore"}},
+    {"ID":"NSea10_1","Name":{"C":"臺東大武沿海","E":"Taitung-Dawu inshore"}},
+    {"ID":"NSea11","Name":{"C":"綠島蘭嶼海面","E":"Ludao-Lanyu inshore"}},
+    {"ID":"NSea12","Name":{"C":"花蓮沿海","E":"Hualien inshore"}},
+    {"ID":"NSea13","Name":{"C":"宜蘭蘇澳沿海","E":"Yilan-Su-ao inshore"}},
+    {"ID":"NSea14","Name":{"C":"澎湖海面","E":"Penghu inshore"}},
+    {"ID":"NSea15","Name":{"C":"馬祖海面","E":"Matsu inshore"}},
+    {"ID":"NSea16","Name":{"C":"金門海面","E":"Kinmen inshore"}}
+  ],
+  "Info_FSea":[
+    {"ID":"FSea01","Name":{"C":"黃海南部海面","E":"Southern Yellow Sea"}},
+    {"ID":"FSea02","Name":{"C":"花鳥山海面","E":"Huaniaoshan"}},
+    {"ID":"FSea03","Name":{"C":"東海北部海面","E":"Northern East China Sea"}},
+    {"ID":"FSea04","Name":{"C":"浙江海面","E":"Zhejiang"}},
+    {"ID":"FSea05","Name":{"C":"東海南部海面","E":"Southern East China Sea"}},
+    {"ID":"FSea06","Name":{"C":"臺灣北部海面","E":"North Taiwan offshore"}},
+    {"ID":"FSea07","Name":{"C":"臺灣海峽北部","E":"North Taiwan Strait"}},
+    {"ID":"FSea08","Name":{"C":"臺灣東北部海面","E":"Northeast Taiwan offshore"}},
+    {"ID":"FSea09","Name":{"C":"臺灣海峽南部","E":"South Taiwan Strait"}},
+    {"ID":"FSea10","Name":{"C":"臺灣東南部海面","E":"Southeast Taiwan offshore"}},
+    {"ID":"FSea11","Name":{"C":"東沙島海面","E":"Pratas"}},
+    {"ID":"FSea12","Name":{"C":"廣東海面","E":"Kwangtung"}},
+    {"ID":"FSea13","Name":{"C":"巴士海峽","E":"Bashi Channel"}},
+    {"ID":"FSea14","Name":{"C":"中西沙島海面","E":"Paracels"}},
+    {"ID":"FSea15","Name":{"C":"南沙島海面","E":"Nansha"}}
+  ]
+};

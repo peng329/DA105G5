@@ -1,0 +1,85 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<table class="table table-sm table-striped table-hover" >
+    <thead class="thead-dark">
+			<tr>
+				<th>檢舉編號</th>
+				<th>潛店編號</th>
+				<th>檢舉原因</th>
+				<th>審核狀態</th>
+				<th>察看確認</th>
+				<th></th>
+				<th>審核處理</th>						
+			</tr>
+    </thead>
+    
+    
+    
+    <tbody id="myTable">
+
+<c:forEach var="mrds_recordVO" items="${list}">
+	<c:if test='${mrds_recordVO.rep_state eq "待審核"}'>
+		<tr>
+			<td>${mrds_recordVO.mrds_no}</td>
+			<td>${mrds_recordVO.ds_no}</td>
+			<td>${mrds_recordVO.rep_content}</td>
+			<td>${mrds_recordVO.rep_state}</td>
+			<td><a href="<%=request.getContextPath()%>/diveshop/diveshop.do?action=getOne_For_Display&ds_no=${mrds_recordVO.ds_no}">查看詳情</a><td>
+			
+			
+			  <!--<input type="submit" class="checkBtn btn btn-primary" value="處理">-->
+ <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  處理</button></td>
+			
+			
+<!---------------------- Modal彈窗--------------------------------------------- -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">審核決定</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>檢舉編號:${mrds_recordVO.mrds_no}</div>
+			<div>檢舉原因:${mrds_recordVO.rep_content}</div>
+      </div>
+      <div class="modal-footer">
+<FORM METHOD="post" class="doCheck" ACTION="<%=request.getContextPath()%>/back-end/mrds_record/mrds_record.do">			      
+				<input type="hidden" name="rep_state"  value="通過">
+			     <input type="hidden" name="mrds_no"  value="${mrds_recordVO.mrds_no}">
+			     <input type="hidden" name="mem_no"  value="${mrds_recordVO.mem_no}">
+			     <input type="hidden" name="ds_no"  value="${mrds_recordVO.ds_no}">
+			     <input type="hidden" name="rep_time"  value="${mrds_recordVO.rep_time}">
+			     <input type="hidden" name="rep_content"  value="${mrds_recordVO.rep_content}">
+			     <input type="hidden" name="action"	value="update">      	
+      	<button type="submit" class="btn btn-primary">通過</button>
+</FORM>
+
+<FORM METHOD="post" class="doCheck" ACTION="<%=request.getContextPath()%>/back-end/mrds_record/mrds_record.do">			      
+				<input type="hidden" name="rep_state"  value="不通過">
+			     <input type="hidden" name="mrds_no"  value="${mrds_recordVO.mrds_no}">
+			     <input type="hidden" name="mem_no"  value="${mrds_recordVO.mem_no}">
+			     <input type="hidden" name="ds_no"  value="${mrds_recordVO.ds_no}">
+			     <input type="hidden" name="rep_time"  value="${mrds_recordVO.rep_time}">
+			     <input type="hidden" name="rep_content"  value="${mrds_recordVO.rep_content}">
+			     <input type="hidden" name="action"	value="update">  
+        <button type="submit" class="btn btn-secondary">不通過</button> 
+</FORM>               
+      </div>
+    </div>
+  </div>
+</div>
+<!-- !! -->
+		</tr>
+	 </c:if>
+	</c:forEach>
+    </tbody>
+</table>
+
+
+

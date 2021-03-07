@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Courgette|Noto+Sans+TC:500|Noto+Serif+TC:900|Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:500|Noto+Serif+TC:900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC:900&display=swap');
+
+*{box-sizing: border-box;}
+header{
+	    /*position: fixed;*/
+    z-index: 1;
+    margin-left: 7em;
+    margin-right: 7em;
+    margin-top: 0em;
+    padding: 0em;
+}
+
+#con1{
+	text-align: center;
+	    padding: .1em;
+}
+#p.slogn{
+	position:relative;
+	top:-300px;
+}
+a.navbar-brand{
+    max-width: 10em;
+    max-height: 7em;
+    margin-right: .1em;
+    overflow: hidden
+ }
+ header nav img {
+    max-height: 6em;
+    max-width: 6em;
+}
+
+.nav-item{
+	padding-right:2.5em;
+    padding-left:2.5em;
+}
+
+
+form.form-inline.my-3.my-lg-0 {
+    position: absolute;
+    right: 1em;
+}
+
+#buycar{
+    padding-left: 2em;
+    padding-bottom: 0em;
+    padding-top: 0.5em;
+    padding-right: 1.5em
+}
+
+
+#navbarSupportedContent a{
+	font-family: 'Noto Serif TC', serif;
+}
+#navbarSupportedContent a:hover{
+		color:#65c4e0;
+}
+
+#con2{
+	position: relative;
+	top:1.5em;	
+	z-index: -1;
+}
+
+#con3{
+	font-family: 'Courgette', cursive;
+	position: relative;
+	top:2.5em;
+}
+
+#con3 p{
+	text-align: center;
+	font-size: 1.5em;
+	text-indent:3.5em;
+}
+
+#con3 h3{
+	line-height: 2.5em;
+}
+
+#con4{
+	position: relative;
+	margin-top:0.5em;
+	overflow: hidden;
+}
+
+figure{
+	position: relative;
+	overflow: hidden;
+}
+
+#con4 figure img{
+	width: 100%;
+	height: 100%;
+	transition: all 1s;
+}
+
+#con4 figure:hover img{
+transform:scale(1.5,1.5);
+}
+
+#con4 figure figcaption{
+	background-color:rgba(0,0,0,0.8);
+	color: #fff;
+	text-shadow: 1px 1px 1px #693;
+	opacity: 0;
+	transition: all 0.8s;
+	position:absolute;
+	top:0;
+	left:0;
+    width: 100%;
+	height: 100%;
+    overflow: hidden;
+}
+
+#con4 figure:hover figcaption{
+	opacity: 1;
+}
+
+#con4 p{
+  line-height:4.5em;
+  	font-size:4em;
+  position:relative;
+  	text-align:center;
+  font-family: 'Noto Serif TC', serif;
+}
+
+
+h1{
+	font-family: 'Noto Sans TC', sans-serif;
+}
+h3{
+	font-family: 'Noto Serif TC', serif;
+}
+
+@keyframes fade-in{  
+    0%{ opacity: 0;}
+    100%{opacity:1;}
+}
+#slogn{
+	font-family: 'Courgette', cursive;
+	font-size: 2.5em;
+	 opacity: 0;
+    animation: fade-in 10s ease 0s 1;    
+      animation-fill-mode:forwards;
+}
+
+#d1{
+	float: left;
+}
+
+
+#d2{
+	float: left;
+	margin-left:2em;
+}
+
+
+#fot p{
+	position: relative;
+	padding-top: 1.5em;
+	text-align:center;
+	font-family: 'Courgette', cursive;
+	z-index: 1;
+}

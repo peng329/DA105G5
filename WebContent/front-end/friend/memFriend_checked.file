@@ -1,0 +1,19 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<table class="table table-sm table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+        <tr>
+            <th>好友帳號</th>
+            <th>好友暱稱</th>
+        </tr>
+        </tr>
+    </thead>
+    <tbody id="myTable">
+        <c:forEach var="memNo" items="${list}">
+            <tr>
+                <td>${memSvc.getOneMem(memNo).mem_id}</td>
+                <td>${memSvc.getOneMem(memNo).mem_name}</td>
+            </tr>
+        </c:forEach>
+    </tbody>
+</table>
