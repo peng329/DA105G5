@@ -1,7 +1,7 @@
 
 
 public class PassRandom {
-
+	//20210307測試git註解
     public static void main(String[] args) {
         PassRandom q1 = new PassRandom();
         
